@@ -15,13 +15,6 @@ class AlertWindowActivity : AppCompatActivity() {
     private var callbackHandle: Long = 0
 
     override fun onCreate(savedInstanceState: Bundle?) {
-        initThings()
-        super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_alert_window)
-        initViews()
-    }
-
-    private fun initThings() {
         window.setType(WindowManager.LayoutParams.TYPE_KEYGUARD_DIALOG);
         val win: Window = window
         win.addFlags(WindowManager.LayoutParams.FLAG_SHOW_WHEN_LOCKED)
@@ -30,6 +23,9 @@ class AlertWindowActivity : AppCompatActivity() {
             window.statusBarColor = ContextCompat.getColor(this, R.color.primaryColor)
         }
         setTheme(R.style.NormalTheme)
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_alert_window)
+        initViews()
     }
 
     private fun initViews() {
