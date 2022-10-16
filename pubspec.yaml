@@ -1,7 +1,7 @@
 name: flutter_alert_window
 description: A flutter plugin to show a window even if device is locked
 version: 0.0.1
-homepage:
+homepage: https://github.com/codingwithsaeed/flutter_alert_window
 
 environment:
   sdk: ">=2.17.6 <3.0.0"
