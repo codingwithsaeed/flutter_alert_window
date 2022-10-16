@@ -1,8 +1,7 @@
-package ir.codingwithsaeed.flutter_alert_window
+package ir.codingwithsaeed.alert_activity
 
 import android.content.Context
 import android.content.IntentFilter
-
 import io.flutter.embedding.engine.plugins.FlutterPlugin
 import io.flutter.plugin.common.EventChannel
 import io.flutter.plugin.common.JSONMethodCodec
@@ -10,22 +9,24 @@ import io.flutter.plugin.common.MethodCall
 import io.flutter.plugin.common.MethodChannel
 import io.flutter.plugin.common.MethodChannel.MethodCallHandler
 import io.flutter.plugin.common.MethodChannel.Result
-import ir.codingwithsaeed.alert_activity.CLOSE_ACTION
+import ir.codingwithsaeed.flutter_alert_window.CloseBroadcastReceiver
+import ir.codingwithsaeed.flutter_alert_window.Utils
 import org.json.JSONObject
 
-class FlutterAlertWindowPlugin : FlutterPlugin, MethodCallHandler {
+val CLOSE_ACTION = "CloseButtonPressed"
+
+
+class AlertActivityPlugin : FlutterPlugin, MethodCallHandler {
     private lateinit var channel: MethodChannel
     private lateinit var eventChannel: EventChannel
     private lateinit var context: Context
 
     override fun onAttachedToEngine(flutterPluginBinding: FlutterPlugin.FlutterPluginBinding) {
         channel = MethodChannel(
-            flutterPluginBinding.binaryMessenger, "flutter_alert_window", JSONMethodCodec.INSTANCE
+            flutterPluginBinding.binaryMessenger, "alert_activity", JSONMethodCodec.INSTANCE
         )
         eventChannel = EventChannel(
-            flutterPluginBinding.binaryMessenger,
-            "flutter_alert_window_event",
-            JSONMethodCodec.INSTANCE
+            flutterPluginBinding.binaryMessenger, "alert_activity_event", JSONMethodCodec.INSTANCE
         )
         context = flutterPluginBinding.applicationContext
         val closeBroadcast = CloseBroadcastReceiver.getInstance()
@@ -36,7 +37,7 @@ class FlutterAlertWindowPlugin : FlutterPlugin, MethodCallHandler {
     }
 
     override fun onMethodCall(call: MethodCall, result: Result) {
-        if (call.method == "showAlert") {
+        if (call.method == "openAlertActivity") {
             val args = call.arguments as JSONObject
             val time = args.getString("time")
             val title = args.getString("title")
@@ -52,5 +53,6 @@ class FlutterAlertWindowPlugin : FlutterPlugin, MethodCallHandler {
     override fun onDetachedFromEngine(binding: FlutterPlugin.FlutterPluginBinding) {
         channel.setMethodCallHandler(null)
         eventChannel.setStreamHandler(null)
+//        context.unregisterReceiver()
     }
 }
