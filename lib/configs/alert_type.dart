@@ -1,0 +1,1 @@
+enum AlertType { alert, adhan }

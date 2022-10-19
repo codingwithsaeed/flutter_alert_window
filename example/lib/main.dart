@@ -1,4 +1,7 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
+import 'package:flutter_alert_window/configs/alert_type.dart';
 import 'package:flutter_alert_window/flutter_alert_window.dart';
 
 FlutterAlertWindow alert = FlutterAlertWindow();
@@ -20,11 +23,17 @@ class MyApp extends StatelessWidget {
         body: Center(
           child: ElevatedButton(
             onPressed: () {
-              alert.show(
-                time: '22:19',
-                title: 'title',
-                description: 'description',
-                onClose: onClose,
+              Timer(
+                const Duration(seconds: 5),
+                () {
+                  alert.show(
+                    time: '22:19',
+                    title: 'title',
+                    description: 'description',
+                    type: AlertType.adhan,
+                    onClose: onClose,
+                  );
+                },
               );
             },
             child: const Text('Show Alert'),

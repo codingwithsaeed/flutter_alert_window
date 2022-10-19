@@ -7,6 +7,7 @@ import android.view.Window
 import android.view.WindowManager
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
+import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.core.content.ContextCompat
 import com.google.android.material.button.MaterialButton
 import ir.codingwithsaeed.alert_activity.CLOSE_ACTION
@@ -29,6 +30,16 @@ class AlertWindowActivity : AppCompatActivity() {
     }
 
     private fun initViews() {
+        if (intent.hasExtra("type")) {
+            val type = intent.getStringExtra("type")
+            val layout = findViewById<ConstraintLayout>(R.id.backgroundLayout)
+            if (type == "adhan") {
+                layout.setBackgroundResource(R.drawable.adhan)
+            } else {
+                layout.setBackgroundResource(R.drawable.alert)
+            }
+        }
+
         if (intent.hasExtra("time")) {
             val time = findViewById<TextView>(R.id.txt_time)
             time.text = intent.getStringExtra("time")

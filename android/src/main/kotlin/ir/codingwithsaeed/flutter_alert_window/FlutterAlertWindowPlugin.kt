@@ -41,8 +41,9 @@ class FlutterAlertWindowPlugin : FlutterPlugin, MethodCallHandler {
             val time = args.getString("time")
             val title = args.getString("title")
             val desc = args.getString("description")
+            val type = args.getString("alert_type")
             val onCloseHandle = args.getLong("on_close")
-            Utils.openAlertWindow(context, time, title, desc, onCloseHandle)
+            Utils.openAlertWindow(context, time, title, desc, type, onCloseHandle)
             result.success(true)
         } else {
             result.notImplemented()

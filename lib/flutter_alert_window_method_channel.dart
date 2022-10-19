@@ -4,6 +4,7 @@ import 'dart:ui';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/services.dart';
 
+import 'configs/alert_type.dart';
 import 'flutter_alert_window_platform_interface.dart';
 
 class MethodChannelFlutterAlertWindow extends FlutterAlertWindowPlatform {
@@ -31,6 +32,7 @@ class MethodChannelFlutterAlertWindow extends FlutterAlertWindowPlatform {
     required String time,
     required String title,
     required String description,
+    required AlertType type,
     required void Function() onClose,
   }) async {
     if (Platform.isAndroid) {
@@ -40,6 +42,7 @@ class MethodChannelFlutterAlertWindow extends FlutterAlertWindowPlatform {
         'time': time,
         'title': title,
         'description': description,
+        'alert_type': type.name,
         'on_close': onCloseHandle?.toRawHandle()
       };
       return await methodChannel.invokeMethod('showAlert', args);

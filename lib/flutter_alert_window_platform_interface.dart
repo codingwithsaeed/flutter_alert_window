@@ -1,3 +1,4 @@
+import 'package:flutter_alert_window/configs/alert_type.dart';
 import 'package:plugin_platform_interface/plugin_platform_interface.dart';
 
 import 'flutter_alert_window_method_channel.dart';
@@ -8,7 +9,7 @@ abstract class FlutterAlertWindowPlatform extends PlatformInterface {
   static final Object _token = Object();
 
   static FlutterAlertWindowPlatform _instance =
-      MethodChannelFlutterAlertWindow();
+  MethodChannelFlutterAlertWindow();
 
   static FlutterAlertWindowPlatform get instance => _instance;
 
@@ -21,6 +22,7 @@ abstract class FlutterAlertWindowPlatform extends PlatformInterface {
     required String time,
     required String title,
     required String description,
+    required AlertType type,
     required void Function() onClose,
   });
 }

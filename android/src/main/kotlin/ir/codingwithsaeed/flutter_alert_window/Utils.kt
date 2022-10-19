@@ -19,13 +19,19 @@ class Utils {
         }
 
         fun openAlertWindow(
-            context: Context, time: String, title: String, desc: String, onCloseHandle: Long,
+            context: Context,
+            time: String,
+            title: String,
+            desc: String,
+            type: String,
+            onCloseHandle: Long,
         ) {
             wakeUpScreen(context)
             val intent = Intent(context, AlertWindowActivity::class.java)
             intent.putExtra("time", time)
             intent.putExtra("title", title)
             intent.putExtra("description", desc)
+            intent.putExtra("type", type)
             intent.putExtra("onCloseHandle", onCloseHandle)
             intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK
             intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK)
