@@ -9,3 +9,7 @@ Fix some bugs.
 ## 0.0.3
 
 add type parameter to the show method to allow for different backgrounds
+
+## 0.0.4
+
+compress png images to reduce size
