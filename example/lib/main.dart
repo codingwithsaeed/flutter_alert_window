@@ -26,13 +26,22 @@ class MyApp extends StatelessWidget {
               Timer(
                 const Duration(seconds: 5),
                 () {
-                  alert.show(
+                  alert
+                      .show(
                     time: '22:19',
                     title: 'title',
                     description: 'description',
                     type: AlertType.adhan,
                     onClose: onClose,
-                  );
+                  )
+                      .then((value) {
+                    Timer(
+                      const Duration(seconds: 5),
+                      () {
+                        alert.close();
+                      },
+                    );
+                  });
                 },
               );
             },

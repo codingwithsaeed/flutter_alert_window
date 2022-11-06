@@ -12,6 +12,7 @@
             android:label="Reminder"
             android:launchMode="singleInstance"
             android:showOnLockScreen="true"
+            android:excludeFromRecents="true"
             android:theme="@style/Theme.MaterialComponents.Light.NoActionBar" />
         <receiver android:name=".CloseBroadcastReceiver" />
     </application>

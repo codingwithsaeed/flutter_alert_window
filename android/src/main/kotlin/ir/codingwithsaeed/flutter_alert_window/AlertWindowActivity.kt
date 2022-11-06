@@ -13,9 +13,18 @@ import com.google.android.material.button.MaterialButton
 import ir.codingwithsaeed.alert_activity.CLOSE_ACTION
 
 class AlertWindowActivity : AppCompatActivity() {
+    companion object {
+        public lateinit var activity: AlertWindowActivity
+    }
+
+
     private var callbackHandle: Long = 0
 
     override fun onCreate(savedInstanceState: Bundle?) {
+        activity = this
+        if (intent.getBooleanExtra("EXIT", false)) {
+            finish();
+        }
         window.setType(WindowManager.LayoutParams.TYPE_KEYGUARD_DIALOG);
         val win: Window = window
         win.addFlags(WindowManager.LayoutParams.FLAG_SHOW_WHEN_LOCKED)
@@ -63,6 +72,7 @@ class AlertWindowActivity : AppCompatActivity() {
 
     override fun onBackPressed() {
         sendNewBroadcast()
+        finishAffinity()
         super.onBackPressed()
     }
 

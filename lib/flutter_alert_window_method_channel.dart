@@ -49,4 +49,9 @@ class MethodChannelFlutterAlertWindow extends FlutterAlertWindowPlatform {
     }
     return Future.value(false);
   }
+
+  @override
+  Future<bool?> close() async {
+    return await methodChannel.invokeMethod('close');
+  }
 }

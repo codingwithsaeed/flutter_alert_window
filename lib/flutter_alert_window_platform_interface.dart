@@ -9,7 +9,7 @@ abstract class FlutterAlertWindowPlatform extends PlatformInterface {
   static final Object _token = Object();
 
   static FlutterAlertWindowPlatform _instance =
-  MethodChannelFlutterAlertWindow();
+      MethodChannelFlutterAlertWindow();
 
   static FlutterAlertWindowPlatform get instance => _instance;
 
@@ -25,4 +25,6 @@ abstract class FlutterAlertWindowPlatform extends PlatformInterface {
     required AlertType type,
     required void Function() onClose,
   });
+
+  Future<bool?> close();
 }

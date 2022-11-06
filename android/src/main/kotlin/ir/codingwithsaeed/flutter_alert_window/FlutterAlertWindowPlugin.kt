@@ -12,6 +12,7 @@ import io.flutter.plugin.common.MethodChannel.MethodCallHandler
 import io.flutter.plugin.common.MethodChannel.Result
 import ir.codingwithsaeed.alert_activity.CLOSE_ACTION
 import org.json.JSONObject
+import kotlin.system.exitProcess
 
 class FlutterAlertWindowPlugin : FlutterPlugin, MethodCallHandler {
     private lateinit var channel: MethodChannel
@@ -45,8 +46,11 @@ class FlutterAlertWindowPlugin : FlutterPlugin, MethodCallHandler {
             val onCloseHandle = args.getLong("on_close")
             Utils.openAlertWindow(context, time, title, desc, type, onCloseHandle)
             result.success(true)
+        } else if (call.method == "close") {
+            Utils.closeAlertWindow(context)
         } else {
             result.notImplemented()
+
         }
     }
 

@@ -18,4 +18,8 @@ class FlutterAlertWindow {
       onClose: onClose,
     );
   }
+
+  Future<bool?> close() async {
+    return await FlutterAlertWindowPlatform.instance.close();
+  }
 }
