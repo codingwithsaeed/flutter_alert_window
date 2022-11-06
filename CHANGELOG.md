@@ -13,3 +13,7 @@ add type parameter to the show method to allow for different backgrounds
 ## 0.0.4
 
 compress png images to reduce size
+
+## 0.0.5
+
+add close function to close alert window
