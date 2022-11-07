@@ -17,3 +17,7 @@ compress png images to reduce size
 ## 0.0.5
 
 add close function to close alert window
+
+## 0.0.6
+
+separate background images
