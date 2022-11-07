@@ -5,9 +5,9 @@ import android.os.Build
 import android.os.Bundle
 import android.view.Window
 import android.view.WindowManager
+import android.widget.ImageView
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
-import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.core.content.ContextCompat
 import com.google.android.material.button.MaterialButton
 import ir.codingwithsaeed.alert_activity.CLOSE_ACTION
@@ -41,11 +41,11 @@ class AlertWindowActivity : AppCompatActivity() {
     private fun initViews() {
         if (intent.hasExtra("type")) {
             val type = intent.getStringExtra("type")
-            val layout = findViewById<ConstraintLayout>(R.id.backgroundLayout)
+            val imageView = findViewById<ImageView>(R.id.imageView)
             if (type == "adhan") {
-                layout.setBackgroundResource(R.drawable.adhan)
+                imageView.setImageResource(R.drawable.namaz)
             } else {
-                layout.setBackgroundResource(R.drawable.alert)
+                imageView.setImageResource(R.drawable.alert)
             }
         }
 

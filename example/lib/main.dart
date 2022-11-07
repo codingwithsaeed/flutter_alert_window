@@ -31,7 +31,7 @@ class MyApp extends StatelessWidget {
                     time: '22:19',
                     title: 'title',
                     description: 'description',
-                    type: AlertType.adhan,
+                    type: AlertType.alert,
                     onClose: onClose,
                   )
                       .then((value) {
