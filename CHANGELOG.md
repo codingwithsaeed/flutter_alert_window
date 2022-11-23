@@ -21,3 +21,7 @@ add close function to close alert window
 ## 0.0.6
 
 separate background images
+
+## 0.0.7
+
+add font for alertWindow components
