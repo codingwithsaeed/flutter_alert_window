@@ -29,8 +29,8 @@ class MyApp extends StatelessWidget {
                   alert
                       .show(
                     time: '22:19',
-                    title: 'title',
-                    description: 'description',
+                    title: 'عنوان احتمالا یادآوری',
+                    description: 'توضیحات احمتالا یادآوری',
                     type: AlertType.alert,
                     onClose: onClose,
                   )
