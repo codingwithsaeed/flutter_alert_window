@@ -25,3 +25,7 @@ separate background images
 ## 0.0.7
 
 add font for alertWindow components
+
+## 0.0.8
+
+jump over previous version
