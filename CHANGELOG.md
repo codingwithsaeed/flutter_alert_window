@@ -29,3 +29,7 @@ add font for alertWindow components
 ## 0.0.8
 
 jump over previous version
+
+## 0.0.9
+
+add margin for elements in alert window
