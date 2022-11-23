@@ -12,10 +12,12 @@
         android:id="@+id/txt_time"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="16dp"
-        android:layout_marginRight="16dp"
+        android:gravity="center_horizontal"
+        android:paddingLeft="16dp"
+        android:paddingRight="16dp"
         android:fontFamily="@font/iransans"
         android:textColor="#FFF"
+
         android:textSize="40sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -28,28 +30,29 @@
         android:id="@+id/txt_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="16dp"
         android:layout_marginTop="16dp"
-        android:layout_marginRight="16dp"
         android:fontFamily="@font/iransans"
+        android:gravity="center_horizontal"
+        android:paddingLeft="16dp"
+        android:paddingRight="16dp"
         android:textColor="#FFF"
         android:textSize="30sp"
-
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txt_time"
         app:layout_constraintVertical_bias="0"
-        tools:text="تست یادآوری" />
+        tools:text="تست عنوان یادآوری" />
 
     <TextView
         android:id="@+id/txt_desc"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="16dp"
         android:layout_marginTop="16dp"
-        android:layout_marginRight="16dp"
         android:fontFamily="@font/iransans"
+        android:gravity="center_horizontal"
+        android:paddingLeft="16dp"
+        android:paddingRight="16dp"
         android:textColor="#919191"
         android:textSize="25sp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -57,7 +60,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txt_title"
         app:layout_constraintVertical_bias="0"
-        tools:text="تست یادآوری" />
+        tools:text="تست توضیحات یادآوری" />
 
     <ImageView
         android:id="@+id/imageView"

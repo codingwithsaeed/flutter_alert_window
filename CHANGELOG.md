@@ -33,3 +33,7 @@ jump over previous version
 ## 0.0.9
 
 add margin for elements in alert window
+
+## 0.1.0
+
+change margin property to padding
